@@ -79,20 +79,12 @@ function setShowHideListner(elem){
 
 function setCustomOnChangeEvent(elem){
     const input = elem.querySelector('input');
-    // const cusChangeEvent = new CustomEvent('onChangeDetect', {
-    //     bubbles: true,
-    //     detail : { val: () =>  input.value }
-    // });
-
-    input.addEventListener('input', () => {
-        //e.target.dispatchEvent(cusChangeEvent);
-        //console.log(e.target.value)
-        this.dispatchEvent(new CustomEvent('cuschange', {
+    input.addEventListener('input', (e) => {
+        e.target.dispatchEvent(new CustomEvent('textIn', {
             bubbles: true,
-            detail: {text : () => input.value}
+            detail: {text : input.value}
         }) );
     });
-
 }
 
 let showHideButtonTemplate = `
