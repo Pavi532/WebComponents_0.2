@@ -1,0 +1,14 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+body{
+    background-color: $bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.unex-player{
+    width: 100%;
+}
