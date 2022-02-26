@@ -1,0 +1,23 @@
+$bg : rgb(255, 255, 255);
+
+//Gernerals
+$input--height__primary: 35px;
+$input--radius__primary: 4px;
+$input--font-size__primary: 15px;
+
+
+//Light Theme
+$textbox--light__bg: #FFF;
+$textbox--light__border: #adb4d0;
+$textbox--light__border_focus: #546fd8;
+$textbox--light__color: #1c1a20;
+$textbox--light__selection-bg: #f8bc3a;
+$textbox--light__shadow_focus: 0px 0px 0px 3px rgba(#f8b122,0.5);
+
+// Dark Theme
+$textbox--dark__border: #979DB5;
+
+//WCAG
+$textbox--wcag__bg: #FFF;
+$textbox--wcag__border: #777d92;
+

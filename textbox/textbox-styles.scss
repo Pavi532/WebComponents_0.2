@@ -1,0 +1,71 @@
+@import '_textbox-variables.scss';
+@import '_textbox-mixins.scss';
+
+body{
+    background-color: $bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+unex-textbox{
+    box-sizing: border-box;
+    margin: 5px;
+
+    .u-textbox-wrapper{
+        background-color: $textbox--light__bg;
+        border: 1px solid $textbox--light__border;
+        border-radius: $input--radius__primary;
+        display: flex;
+
+        input.u-input{
+            box-sizing: border-box;
+            height: $input--height__primary;
+            width: 100%;
+            background-color: $textbox--light__bg;
+            border-width: 0px;
+            border-color: transparent;
+            border-radius: $input--radius__primary;
+            padding: 5px 10px;
+            color: $textbox--light__color;
+            font-size: $input--font-size__primary;
+            outline: none;
+    
+            &::selection{
+                background-color: $textbox--light__selection-bg;
+            }
+        }
+
+        button.u-btn-input{
+            box-sizing: border-box;
+            background-color: transparent;
+            border: 0;
+            width:  $input--height__primary;
+            height: $input--height__primary;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            outline: none;
+
+            &.u-show{
+                background-color: aquamarine;
+            }
+
+            &.u-hide{
+                background-color: cadetblue;
+            }
+            
+            &:focus, &.u-focused{
+                border-color: $textbox--light__border_focus;
+                box-shadow: $textbox--light__shadow_focus;
+            }
+        }
+
+        &:focus, &.u-focused{
+            border-color: $textbox--light__border_focus;
+            box-shadow: $textbox--light__shadow_focus;
+        }
+    }
+
+}
