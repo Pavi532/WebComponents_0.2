@@ -1,5 +1,25 @@
+:root {
+  --body-bg: white;
+  --textbox-bg: #FFF;
+  --textbox-border: #adb4d0;
+  --textbox-border-focus: #546fd8;
+  --textbox-color: #1c1a20;
+  --textbox-selection-bg: #f8bc3a;
+  --textbox-shadow-focus: 0px 0px 0px 3px rgba(248, 177, 34, 0.5);
+}
+
+.dark {
+  --body-bg: #222222;
+  --textbox-bg: #222222;
+  --textbox-border: #979DB5;
+  --textbox-border-focus: #cdd3ec;
+  --textbox-color: #eeeeee;
+  --textbox-selection-bg: #f8bc3a;
+  --textbox-shadow-focus: 0px 0px 0px 3px rgba(248, 177, 34, 0.5);
+}
+
 body {
-  background-color: white;
+  background-color: var(--body-bg);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,38 +40,39 @@ unex-textbox {
 }
 
 unex-textbox .u-textbox-wrapper {
-  background-color: #FFF;
-  border: 1px solid #adb4d0;
+  background-color: var(--textbox-bg);
+  border: 1px solid var(--textbox-border);
   border-radius: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-unex-textbox .u-textbox-wrapper input.u-input {
+unex-textbox .u-textbox-wrapper .u-input {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 35px;
   width: 100%;
-  background-color: #FFF;
+  background-color: var(--textbox-bg);
   border-width: 0px;
   border-color: transparent;
   border-radius: 4px;
   padding: 5px 10px;
-  color: #1c1a20;
+  color: var(--textbox-color);
   font-size: 15px;
+  line-height: 35px;
   outline: none;
 }
 
-unex-textbox .u-textbox-wrapper input.u-input::-moz-selection {
-  background-color: #f8bc3a;
+unex-textbox .u-textbox-wrapper .u-input::-moz-selection {
+  background-color: var(--textbox-selection-bg);
 }
 
-unex-textbox .u-textbox-wrapper input.u-input::selection {
-  background-color: #f8bc3a;
+unex-textbox .u-textbox-wrapper .u-input::selection {
+  background-color: var(--textbox-selection-bg);
 }
 
-unex-textbox .u-textbox-wrapper button.u-btn-input {
+unex-textbox .u-textbox-wrapper .u-btn-input {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: transparent;
@@ -63,23 +84,23 @@ unex-textbox .u-textbox-wrapper button.u-btn-input {
   outline: none;
 }
 
-unex-textbox .u-textbox-wrapper button.u-btn-input.u-show {
+unex-textbox .u-textbox-wrapper .u-btn-input.u-show {
   background-color: aquamarine;
 }
 
-unex-textbox .u-textbox-wrapper button.u-btn-input.u-hide {
+unex-textbox .u-textbox-wrapper .u-btn-input.u-hide {
   background-color: cadetblue;
 }
 
-unex-textbox .u-textbox-wrapper button.u-btn-input:focus, unex-textbox .u-textbox-wrapper button.u-btn-input.u-focused {
-  border-color: #546fd8;
-  -webkit-box-shadow: 0px 0px 0px 3px rgba(248, 177, 34, 0.5);
-          box-shadow: 0px 0px 0px 3px rgba(248, 177, 34, 0.5);
+unex-textbox .u-textbox-wrapper .u-btn-input:focus, unex-textbox .u-textbox-wrapper .u-btn-input.u-focused {
+  border-color: var(--textbox-border-focus);
+  -webkit-box-shadow: var(--textbox-shadow-focus);
+          box-shadow: var(--textbox-shadow-focus);
 }
 
 unex-textbox .u-textbox-wrapper:focus, unex-textbox .u-textbox-wrapper.u-focused {
-  border-color: #546fd8;
-  -webkit-box-shadow: 0px 0px 0px 3px rgba(248, 177, 34, 0.5);
-          box-shadow: 0px 0px 0px 3px rgba(248, 177, 34, 0.5);
+  border-color: var(--textbox-border-focus);
+  -webkit-box-shadow: var(--textbox-shadow-focus);
+          box-shadow: var(--textbox-shadow-focus);
 }
 /*# sourceMappingURL=textbox-styles.css.map */
