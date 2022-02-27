@@ -15,9 +15,34 @@ $textbox--light__selection-bg: #f8bc3a;
 $textbox--light__shadow_focus: 0px 0px 0px 3px rgba(#f8b122,0.5);
 
 // Dark Theme
+$bg--dark : #222222;
+$textbox--dark__bg: $bg--dark;
 $textbox--dark__border: #979DB5;
+$textbox--dark__border_focus: #cdd3ec;
+$textbox--dark__color: #eeeeee;
+$textbox--dark__selection-bg: #f8bc3a;
+$textbox--dark__shadow_focus: 0px 0px 0px 3px rgba(#f8b122,0.5);
 
 //WCAG
 $textbox--wcag__bg: #FFF;
 $textbox--wcag__border: #777d92;
 
+:root{
+    --body-bg: #{ $bg };
+    --textbox-bg: #{ $textbox--light__bg };
+    --textbox-border: #{ $textbox--light__border };
+    --textbox-border-focus: #{ $textbox--light__border_focus };
+    --textbox-color: #{ $textbox--light__color };
+    --textbox-selection-bg: #{ $textbox--light__selection-bg };
+    --textbox-shadow-focus: #{ $textbox--light__shadow_focus };
+}
+
+.dark{
+    --body-bg: #{ $bg--dark };
+    --textbox-bg: #{ $textbox--dark__bg };
+    --textbox-border: #{ $textbox--dark__border };
+    --textbox-border-focus: #{ $textbox--dark__border_focus };
+    --textbox-color: #{ $textbox--dark__color };
+    --textbox-selection-bg: #{ $textbox--dark__selection-bg };
+    --textbox-shadow-focus: #{ $textbox--dark__shadow_focus };
+}

@@ -15,14 +15,9 @@ class UnexTextbox extends HTMLElement{
     }
 
     createTemplate(){
-        // if(this.hasAttribute('placeholder')){
-            
-        // }
-        this.innerHTML = `
-            <div class="u-textbox-wrapper">
-                <input type="text" class="u-input">
-            </div>
-        `;
+        var wraaper = createWrapper(this);
+        createInput(wraaper);
+        this.appendChild(wraaper);
     }
 }
 
@@ -40,7 +35,10 @@ function setType(elem){
 
 function setShowHide(elem){
     if(elem.hasAttribute('password') && elem.hasAttribute('showHideTrue')){
-        elem.querySelector('.u-textbox-wrapper').innerHTML += showHideButtonTemplate;
+        elem.querySelector('.u-textbox-wrapper').appendChild(createBtn('u-show', 'Show Password', 'S'));
+    }
+    else if(!elem.hasAttribute('password') && elem.hasAttribute('showHideTrue')){
+        console.error('showHideTrue property requires password property to be set.');
     }
 }
 
@@ -82,15 +80,34 @@ function setCustomOnChangeEvent(elem){
     input.addEventListener('input', (e) => {
         e.target.dispatchEvent(new CustomEvent('textIn', {
             bubbles: true,
-            detail: {text : input.value}
+            detail: {val : input.value}
         }) );
     });
 }
 
-let showHideButtonTemplate = `
-    <button class="u-btn-input u-show" title="Show">S</button>
-`;
+function createWrapper(elem){
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('u-textbox-wrapper');
+    elem.appendChild(wrapper);
+    return wrapper;
+}
 
-customElements.define('unex-textbox', UnexTextbox);
+function createInput(elem){
+    const input = document.createElement('input');
+    input.classList.add('u-input');
+    input.setAttribute('type', 'text');
+    elem.appendChild(input);
+}
+
+function createBtn(cls, title, text){
+    const btn = document.createElement('button');
+    btn.classList.add('u-btn-input' , cls);
+    btn.innerText = text;
+    btn.setAttribute('title', title);
+    return btn
+}
+
+
+window.customElements.define('unex-textbox', UnexTextbox);
 
 

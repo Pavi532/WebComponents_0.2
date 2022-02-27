@@ -1,5 +1,3 @@
 document.querySelector('.unex-1').addEventListener('textIn', e => {
-    console.log(e.detail.text);
+    console.log(e.detail.val);
 });
-
-// console.log(document.querySelector('.unex-1'));
